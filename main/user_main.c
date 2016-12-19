@@ -350,7 +350,7 @@ static void tskreader(void *pvParameters) {
 			c+=n;
 			if ((!madRunning) && (spiRamFifoFree()<spiRamFifoLen()/2)) {
 				//Buffer is filled. Start up the MAD task. Yes, the 2100 words of stack is a fairly large amount but MAD seems to need it.
-				if (xTaskCreatePinnedToCore(tskmad, "tskmad", 16100, NULL, PRIO_MAD, NULL, 1)!=pdPASS) printf("ERROR creating MAD task! Out of memory?\n");
+				if (xTaskCreatePinnedToCore(tskmad, "tskmad", 16100, NULL, PRIO_MAD, NULL, 0)!=pdPASS) printf("ERROR creating MAD task! Out of memory?\n");
 				madRunning=1;
 			}
 			
