@@ -1,0 +1,4 @@
+[submodule "components/i2s"]
+	path = components/i2s
+	url = https://github.com/pewit-tech/esp32-i2s.git
+
